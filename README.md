@@ -13,9 +13,9 @@ This cloud formation template deploys a EC2 instance with a VPC.
 
 ##### 1. Set Up network:
 
-    ```
-    $ aws cloudformation create-stack --stack-name <STACK NAME>  --region us-east-1 --template-body file://network.yml --parameters file://network_params.json
-    ```
+```
+$ aws cloudformation create-stack --stack-name <STACK NAME>  --region us-east-1 --template-body file://network.yml --parameters file://network_params.json
+```
 
 ##### 2. Set Up SERVER:
 
