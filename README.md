@@ -6,19 +6,23 @@ This cloud formation template deploys a EC2 instance with a VPC.
 ### How to Run?
 
 #### PreRequisites
-  * AWS CLI
-  
+
+- AWS CLI
+
 #### Setup Project:
-#####  1.  Set Up network:
+
+##### 1. Set Up network:
 
     ```
-    $ aws cloudformation create-stack --stack-name <STACK NAME>  --region us-east-1 --template-body file://network.yml --parameters file://net_p.json
+    $ aws cloudformation create-stack --stack-name <STACK NAME>  --region us-east-1 --template-body file://network.yml --parameters file://network_params.json
     ```
-#####  2. Set Up SERVER:
-   ```
-   $ aws cloudformation create-stack --stack-name <STACK NAME>  --region us-east-1 --template-body file://just_ec2.yml --parameters file://ser_p.json
-   ```
 
-#####  3. Check EC2, VPC and CloudFormation consoles.
+##### 2. Set Up SERVER:
 
-Note : In `ser_p.json` file `EnvironmentName` must be used whose VPC is already created.
+```
+$ aws cloudformation create-stack --stack-name <STACK NAME>  --region us-east-1 --template-body file://just_ec2.yml --parameters file://server_params.json
+```
+
+##### 3. Check EC2, VPC and CloudFormation consoles.
+
+Note : In `server_params.json` file `EnvironmentName` must be used whose VPC is already created.
