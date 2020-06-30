@@ -1,6 +1,7 @@
 # Code-To-Infrastructure-AWS-Cloudformation
 
 ![alt](cf.png)
+
 This cloud formation template deploys a EC2 instance with a VPC.
 
 ### How to Run?
