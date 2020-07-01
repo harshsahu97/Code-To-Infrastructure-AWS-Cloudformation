@@ -27,3 +27,5 @@ $ aws cloudformation create-stack --stack-name <STACK NAME>  --region us-east-1 
 ##### 3. Check EC2, VPC and CloudFormation consoles.
 
 Note : In `server_params.json` file `EnvironmentName` must be used whose VPC is already created.
+
+References : https://medium.com/faun/aws-cloudformation-essentials-notes-from-the-field-8ed7162e0c5
