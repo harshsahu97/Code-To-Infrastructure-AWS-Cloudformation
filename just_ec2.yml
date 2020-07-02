@@ -1,5 +1,5 @@
 Description: >
-  Harsh Sahu / Adcuratio
+  Adcuratio
   This template deploys a EC2 instance with a security group
 Parameters:
   EnvironmentName:
