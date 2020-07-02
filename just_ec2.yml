@@ -81,14 +81,16 @@ Resources:
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash
-          yum -y update
-
-          # install apache
-          yum install httpd24 -y  
-
-          # start server
-          service httpd start
-          chkconfig httpd on
+          # Install Apache 2
+          apt-get update -y
+          apt-get install unzip awscli -y
+          apt-get install apache2 -y
+          systemctl start apache2.service
+          cd /var/www/html
+          # Copy the web application archive
+          aws s3 cp s3://${S3CodeBucketName}/${S3CodeArchive} .
+          # unzip the archive
+          unzip -o ${S3CodeArchive}
       Tags:
         - Key: Name
           Value: My EC2 Instance
