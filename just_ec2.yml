@@ -14,18 +14,54 @@ Resources:
         Fn::ImportValue: !Sub "${EnvironmentName}-VPCID"
       SecurityGroupIngress:
         - IpProtocol: tcp
+          FromPort: 23750
+          ToPort: 23750
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 9000
+          ToPort: 9000
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 27017
+          ToPort: 27017
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
           FromPort: 80
           ToPort: 80
           CidrIp: 0.0.0.0/0
         - IpProtocol: tcp
-          FromPort: 22
-          ToPort: 22
+          FromPort: 8080
+          ToPort: 8090
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 8001
+          ToPort: 8001
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 2376
+          ToPort: 2376
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
           CidrIp: 0.0.0.0/0
       SecurityGroupEgress:
         - IpProtocol: tcp
-          FromPort: 0
-          ToPort: 65535
-          CidrIp: 0.0.0.0/0
+          FromPort: 23750
+          ToPort: 23750
+          CidrIpv6: ::/0
+        - IpProtocol: tcp
+          FromPort: 27017
+          ToPort: 27017
+          CidrIpv6: ::/0
+        - IpProtocol: tcp
+          FromPort: 8001
+          ToPort: 8001
+          CidrIpv6: ::/0
+        - IpProtocol: tcp
+          FromPort: 2376
+          ToPort: 2376
+          CidrIpv6: ::/0
   Ec2Instance:
     Type: AWS::EC2::Instance
     Properties:
