@@ -78,6 +78,7 @@ Resources:
     Properties:
       InstanceType: t2.micro
       ImageId: ami-04feaf10b86d509a2 # Adcuratio custom (N. Virginia)
+      IamInstanceProfile: !Ref RootInstanceProfile
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash
