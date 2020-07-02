@@ -28,7 +28,8 @@ $ aws cloudformation create-stack --stack-name <STACK NAME>  --region us-east-1 
 
 Note : In `server_params.json` file `EnvironmentName` must be used whose VPC is already created.
 
-####References
+#### References
+
 https://medium.com/faun/aws-cloudformation-essentials-notes-from-the-field-8ed7162e0c5
 
 For Egress and Ingress Rules : https://github.com/hashicorp/terraform/issues/14382
