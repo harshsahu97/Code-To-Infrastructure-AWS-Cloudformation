@@ -40,12 +40,8 @@ Resources:
     Type: AWS::EC2::Subnet
     Properties:
       VpcId: !Ref VPC
-      AvailabilityZone: !Select [0, !GetAZs ""]
       CidrBlock: !Ref PublicSubnet1CIDR
       MapPublicIpOnLaunch: true
-      Tags:
-        - Key: Name
-          Value: !Sub ${EnvironmentName} Public Subnet (AZ1)
 
 Outputs:
   VPC:
@@ -54,14 +50,8 @@ Outputs:
     Export:
       Name: !Sub ${EnvironmentName}-VPCID
 
-  PublicSubnets:
-    Description: A list of the public subnets
-    Value: !Join [",", [!Ref PublicSubnet1]]
-    Export:
-      Name: !Sub ${EnvironmentName}-PUB-NETS
-
   PublicSubnet1:
     Description: A reference to the public subnet in the 1st Availability Zone
     Value: !Ref PublicSubnet1
     Export:
-      Name: !Sub ${EnvironmentName}-PUB1-SN
+      Name: !Sub ${EnvironmentName}-SUBNETID

@@ -5,6 +5,9 @@ Parameters:
   EnvironmentName:
     Description: An environment name that will be prefixed to resource names
     Type: String
+  PublicSubnet:
+    Description: PublicSubnet Id
+    Type: String
 
 Resources:
   EC2SecurityGroup:
@@ -68,6 +71,9 @@ Resources:
     Properties:
       InstanceType: t2.micro
       ImageId: ami-04feaf10b86d509a2 # Adcuratio custom (N. Virginia)
+      SubnetId: !Ref PublicSubnet
+      SecurityGroupIds:
+        - !Ref EC2SecurityGroup
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash
@@ -78,7 +84,7 @@ Resources:
           systemctl start apache2.service
           cd /var/www/html
           # Copy the web application archive
-
+          cat ~/my_password.txt | sudo docker login --username dishblackbox --password-stdin
       Tags:
         - Key: Name
           Value: My EC2 Instance

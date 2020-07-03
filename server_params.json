@@ -1,4 +1,9 @@
 [{
-    "ParameterKey": "EnvironmentName",
-    "ParameterValue": "blackbox"
-}]
+        "ParameterKey": "EnvironmentName",
+        "ParameterValue": "blackbox"
+    },
+    {
+        "ParameterKey": "PublicSubnet",
+        "ParameterValue": "subnet-0920f34908375c71c"
+    }
+]
