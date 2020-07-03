@@ -1,13 +1,4 @@
 [{
-        "ParameterKey": "EnvironmentName",
-        "ParameterValue": "blackbox"
-    },
-    {
-        "ParameterKey": "S3CodeBucketName",
-        "ParameterValue": "<BUCKET_NAME>"
-    },
-    {
-        "ParameterKey": "S3CodeArchive",
-        "ParameterValue": "<FILE_NAME>.zip"
-    }
-]
+    "ParameterKey": "EnvironmentName",
+    "ParameterValue": "blackbox"
+}]
